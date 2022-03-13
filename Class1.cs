@@ -159,17 +159,19 @@ namespace HW_Array
 
         public static int[] SwapTheFirstAndSecondHalfOfAnArray(int[] array)
         {
-            int[] result = Copy(array); //не понимаю как 8 задание
+            int[] result = Copy(array); 
 
+            int n = result.Length / 2;
+            int step = n + result.Length %2;
 
-            for (int i = 0; i < array.Length / 2; i++)
+            for (int i=0;i<n;i++)
             {
                 int tmp = result[i];
-                result[i] = result[result.Length - (1 + i)];
-                result[result.Length - (1 + i)] = tmp;
-
+                result[i] = result[i+step];
+                result[i+step]=tmp;
             }
             return result;
+           
         }
         public static int[] SortArrayByAge()
         {
@@ -191,31 +193,27 @@ namespace HW_Array
             return result;
 
         }
-        public static int[] SortArrayInDescendingOrder()//10 не знааю!!!
-        {
-            int max, temp;
-            int[] result = { 5, 9, 10, 2, 6 };
+        public static int[] SortArrayInDescendingOrder()
+        {          
+            int[] result = { 8,10,9,66,4};
 
-            for (int i = 0; i < result.Length; i++)
+            for (int i = 1; i < result.Length; i++) 
             {
-                max = i;
-
-                for (int j = i + 1; j < result.Length; j++)
+               
+                int crnt = i;
+                while (crnt!=0 && result[crnt - 1]< result[crnt])
                 {
-                    if (result[j] > result[max])
-                    {
-                        max = j;
-                    }
+                    int tmp = result[crnt];
+                    result[crnt] = result[crnt - 1];
+                    result[crnt - 1] = tmp;
+                    crnt--;
                 }
+               
 
-                if (max != i)
-                {
-                    temp = result[i];
-                    result[i] = result[max];
-                    result[max] = temp;
-                }
             }
+
             return result;
+            
         }
 
     }

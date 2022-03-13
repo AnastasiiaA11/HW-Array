@@ -36,4 +36,6 @@ int[] AOI = HomeworkArray.SortArrayByAge();
 HomeworkArray.Write(AOI);
 
 int[] AOPP = HomeworkArray.SortArrayInDescendingOrder();
-HomeworkArray.Write(AOI);
+HomeworkArray.Write(AOPP);
+
+
