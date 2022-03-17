@@ -4,14 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace HW_Array
 {
-    static class HomeworkArray
+    public static class HomeworkArray
     {
-        public static int CheckArray()
+        public static int CheckArray(int[] myArray)
         {
-            int[] myArray = { 30, 20, 40, 10 };
+            
             int minValue = myArray[0];
+
+            if (myArray.Length < 0)
+            {
+                throw new Exception("");
+            }
 
             for (int i = 1; i < myArray.Length; i++)
             {
@@ -24,10 +30,8 @@ namespace HW_Array
             return minValue;
 
         }
-        public static int FindTheMaximumElementOfAnArray()
-        {
-            int[] myArray = { 30, 11, 20, 9, 15 };
-
+        public static int FindTheMaximumElementOfAnArray(int[] myArray)
+        {          
             int maxValue = myArray[0];
 
             for (int i = 1; i < myArray.Length; i++)
@@ -41,9 +45,8 @@ namespace HW_Array
             return maxValue;
         }
 
-        public static int findMinTheIndex()
-        {
-            int[] array = { 100, 10, 9, 25 };
+        public static int FindMinTheIndex(int[] array)
+        {            
             int minValue = array[0];
             int index = 0;
 
@@ -51,7 +54,7 @@ namespace HW_Array
             {
                 if (array[i] < minValue)
                 {
-                    array[i] = minValue;
+                    minValue=array[i];
                     index = i;
                 }
 
@@ -59,9 +62,8 @@ namespace HW_Array
             return index;
         }
 
-        public static int findMaxTheIndex()
-        {
-            int[] array = { 100, 800, 105, 865, 205 };
+        public static int FindMaxTheIndex(int[] array)
+        {         
             int maxValue = array[0];
             int result = 0;
             for (int i = 1; i < array.Length; i++)
@@ -76,9 +78,8 @@ namespace HW_Array
             return result;
         }
 
-        public static int CalculateTheSumOfArrayElements()
-        {
-            int[] array = { 5, 9, 10, 2, 6, };
+        public static int CalculateTheSumOfArrayElements(int[] array)
+        {     
             int sum = 0;
 
 
@@ -141,9 +142,9 @@ namespace HW_Array
             Console.WriteLine();
         }
 
-        public static int CountTheNumberOfOddElementsInAnArray()
+        public static int CountTheNumberOfOddElementsInAnArray(int[] result)
         {
-            int[] result = { 5, 9, 10, 2, 6 };
+            
             int sum = 0;
 
             for (int i = 0; i < result.Length; i++)
@@ -173,9 +174,9 @@ namespace HW_Array
             return result;
            
         }
-        public static int[] SortArrayByAge()
+        public static int[] SortArrayByAge(int[] result)
         {
-            int[] result = { 5, 9, 10, 2, 6 };
+            
 
 
             for (int i = 0; i < result.Length; i += 1)
@@ -193,9 +194,9 @@ namespace HW_Array
             return result;
 
         }
-        public static int[] SortArrayInDescendingOrder()
+        public static int[] SortArrayInDescendingOrder(int[] result)
         {          
-            int[] result = { 8,10,9,66,4};
+          
 
             for (int i = 1; i < result.Length; i++) 
             {
